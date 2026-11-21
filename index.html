@@ -500,12 +500,12 @@
       <section id="section-4" class="policy-section">
         <h2 class="section-heading">4. Customer and Invoice Information</h2>
         <p>
-          Customer and transaction data entered into Billora is used solely to generate your invoices, calculate sales summaries, and help you track pending payments on your device.
+          Customer names, phone numbers, and transaction records entered into Billora are used solely on your device to generate invoices, calculate sales summaries, and track payment statuses.
         </p>
+        <p><strong>Strict Separation of Data Responsibilities:</strong></p>
         <ul>
-          <li>We do not build marketing profiles of your customers.</li>
-          <li>We do not read your device's contacts list.</li>
-          <li>We do not sell, rent, disclose, or share customer names or phone numbers with any third parties or advertisers.</li>
+          <li><strong>No Collection or Sharing by NH TechLabs:</strong> NH TechLabs does not collect, receive, store, rent, sell, or monetize your customer records or transaction history. No customer details are ever transmitted to NH TechLabs. We do not access your device's contacts list, and we do not build marketing profiles of your customers.</li>
+          <li><strong>Voluntary, User-Initiated Sharing:</strong> When you choose to send an invoice or receipt to a customer, accountant, or business partner, you voluntarily initiate that sharing action through Android's native system share menu (e.g., via WhatsApp, Email, Messaging, or Drive). NH TechLabs is not a party to this transfer, has no access to the transmitted document, and cannot view or retain copies of files you share with external applications.</li>
         </ul>
       </section>
 
@@ -513,13 +513,13 @@
       <section id="section-5" class="policy-section">
         <h2 class="section-heading">5. PDF Generation and Sharing</h2>
         <p>
-          Billora allows you to generate professional PDF invoices and receipts:
+          Billora includes features that allow you to generate professional PDF invoices and receipts:
         </p>
         <ul>
           <li><strong>Local Document Creation:</strong> Invoices are rendered directly on your phone as standard PDF documents using your device's built-in print renderer.</li>
           <li><strong>Temporary Storage:</strong> Generated PDF files are temporarily held in your application's secure document cache.</li>
-          <li><strong>User-Initiated Sharing:</strong> When you choose to share an invoice via WhatsApp, email, messaging, or cloud storage apps, Billora hands off the PDF file using Android's standard system share menu (<code>FileProvider</code>).</li>
-          <li><strong>User Control:</strong> Data is transmitted only to the specific application you choose at the moment of sharing. Billora has no control over or access to data once shared with your chosen external application.</li>
+          <li><strong>System Share Menu Handoff:</strong> When you tap "Share Invoice", Billora delegates the file handoff to the Android operating system using a secure Content Provider (<code>FileSystemFileProvider</code>).</li>
+          <li><strong>User Discretion & Control:</strong> The file is sent only to the specific external application (such as WhatsApp, Gmail, or a file manager) that you actively choose in the system dialog. You maintain full discretion over when, where, and with whom your business documents are shared.</li>
         </ul>
       </section>
 
@@ -547,7 +547,7 @@
           <li><strong>No Advertising SDKs:</strong> Billora does not contain third-party advertising SDKs or ad networks (such as Google AdMob, Unity, or AppLovin).</li>
           <li><strong>No Analytics or Telemetry SDKs:</strong> Billora does not include behavioral tracking or analytics frameworks (such as Firebase Analytics, Google Analytics, Facebook Pixel, or Mixpanel).</li>
           <li><strong>No Crash Reporting Trackers:</strong> Billora does not send automated background crash or performance reports to external tracking platforms.</li>
-          <li><strong>Android OS Permissions:</strong> Billora does not request sensitive permissions such as Camera, Contacts, Microphone, Precise Location, or Bluetooth hardware access. Legacy storage permissions (<code>READ/WRITE_EXTERNAL_STORAGE</code>) are explicitly blocked.</li>
+          <li><strong>Android OS Permissions:</strong> Billora does not request sensitive permissions such as Camera, Contacts, Microphone, Precise Location, or Bluetooth hardware access. Legacy storage permissions (<code>READ_EXTERNAL_STORAGE</code> and <code>WRITE_EXTERNAL_STORAGE</code>) are explicitly blocked via Expo configuration. While baseline Android application containers declare the standard <code>INTERNET</code> permission, Billora's application code performs zero network requests and transmits no data over the internet.</li>
         </ul>
       </section>
 
@@ -560,11 +560,11 @@
         <ul>
           <li><strong>No Remote Application Server:</strong> No remote application server currently processes, receives, or stores your business records.</li>
           <li><strong>No Automated Transmission:</strong> No business records or invoice details are automatically transmitted to NH TechLabs or any third party.</li>
-          <li><strong>Unencrypted Local Storage & Backups:</strong> The local SQLite database and exported JSON backup files are stored in unencrypted format.</li>
+          <li><strong>Unencrypted Local Storage & Backups:</strong> The local SQLite database (<code>billora.db</code>) and exported JSON backup files (<code>Billora-Backup-YYYY-MM-DD.json</code>) are stored in unencrypted format.</li>
           <li><strong>Operating System Sandboxing:</strong> Android isolates Billora's application data from other applications on your device through standard Linux user permissions and application sandboxing.</li>
         </ul>
         <div class="callout callout-warning">
-          <strong>User Security Responsibility:</strong> Because data is stored locally and unencrypted, users are responsible for protecting their physical devices with a secure screen lock (PIN, password, or biometric authentication) and safeguarding exported backup files and shared PDF documents.
+          <strong>User Security Responsibility:</strong> Because data is stored locally and unencrypted, the application does not make absolute or infallible security guarantees. Users are responsible for protecting their physical devices with a secure screen lock (PIN, password, or biometric authentication) and safeguarding exported backup files and shared PDF documents against unauthorized local access.
         </div>
       </section>
 
