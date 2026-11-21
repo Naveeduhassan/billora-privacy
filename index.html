@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Billora (Simple Invoice Maker)</title>
+  <meta name="description" content="Privacy Policy for Billora — Simple Invoice Maker by NH TechLabs. Learn how Billora handles your business and invoice data locally and securely.">
+  <style>
+    :root {
+      --primary-navy: #172554;
+      --primary-navy-light: #1e3a8a;
+      --accent-emerald: #059669;
+      --accent-emerald-light: #ecfdf5;
+      --accent-emerald-border: #a7f3d0;
+      --accent-amber: #d97706;
+      --accent-amber-light: #fffbeb;
+      --accent-amber-border: #fde68a;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --border-color: #e2e8f0;
+      --border-subtle: #f1f5f9;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-stack);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Top Brand Bar */
+    .brand-bar {
+      background-color: var(--primary-navy);
+      color: #ffffff;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .brand-bar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      background-color: var(--accent-emerald);
+      color: #ffffff;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-tag {
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 20px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    /* Container */
+    .container {
+      max-width: 860px;
+      margin: 32px auto 64px auto;
+      padding: 0 20px;
+    }
+
+    /* Main Article Card */
+    .policy-card {
+      background-color: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+      padding: 48px;
+    }
+
+    @media (max-width: 640px) {
+      .policy-card {
+        padding: 24px 20px;
+        border-radius: 12px;
+      }
+      .container {
+        margin: 16px auto 40px auto;
+      }
+    }
+
+    /* Hero Header */
+    .policy-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+
+    .policy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--accent-emerald-light);
+      color: var(--accent-emerald);
+      border: 1px solid var(--accent-emerald-border);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .policy-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .policy-subtitle {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .policy-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      background-color: var(--bg-page);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13px;
+    }
+
+    .meta-item strong {
+      color: var(--primary-navy);
+    }
+
+    /* Table of Contents */
+    .toc-card {
+      background-color: #f1f5f9;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .toc-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-list {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    @media (min-width: 600px) {
+      .toc-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 24px;
+      }
+    }
+
+    .toc-link {
+      color: var(--primary-navy-light);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .toc-link:hover {
+      color: var(--accent-emerald);
+      text-decoration: underline;
+    }
+
+    /* Content Sections */
+    .policy-section {
+      margin-bottom: 36px;
+    }
+
+    .section-heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 14px;
+      padding-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 8px;
+    }
+
+    .policy-section p {
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .policy-section ul {
+      margin: 14px 0 18px 22px;
+      color: var(--text-main);
+    }
+
+    .policy-section li {
+      margin-bottom: 8px;
+    }
+
+    .policy-section strong {
+      color: var(--primary-navy);
+    }
+
+    /* Callout Boxes */
+    .callout {
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .callout-success {
+      background-color: var(--accent-emerald-light);
+      border: 1px solid var(--accent-emerald-border);
+      color: #065f46;
+    }
+
+    .callout-success strong {
+      color: #047857;
+    }
+
+    .callout-warning {
+      background-color: var(--accent-amber-light);
+      border: 1px solid var(--accent-amber-border);
+      color: #92400e;
+    }
+
+    .callout-warning strong {
+      color: #b45309;
+    }
+
+    .callout-info {
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+
+    .callout-info strong {
+      color: #1d4ed8;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 16px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    @media (min-width: 540px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-field {
+      font-size: 14px;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .placeholder-pill {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px dashed #d97706;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-color);
+      padding: 36px 20px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-size: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-navy);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Brand Bar -->
+  <header class="brand-bar">
+    <div class="brand-bar-inner">
+      <div class="brand-logo-group">
+        <div class="brand-icon">B</div>
+        <span class="brand-title">NH TechLabs</span>
+      </div>
+      <span class="brand-tag">Billora — Simple Invoice Maker</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <article class="policy-card">
+
+      <!-- Header Section -->
+      <header class="policy-header">
+        <div class="policy-badge">
+          🛡️ Verified Offline Architecture
+        </div>
+        <h1 class="policy-title">Privacy Policy</h1>
+        <p class="policy-subtitle">Billora — Simple Invoice Maker for Android</p>
+
+        <div class="policy-meta-grid">
+          <div class="meta-item">
+            <strong>Developer Brand:</strong> NH TechLabs
+          </div>
+          <div class="meta-item">
+            <strong>Package Identifier:</strong> com.billora.app
+          </div>
+          <div class="meta-item">
+            <strong>Effective Date:</strong> <span class="placeholder-pill">[Effective Date, e.g., November 21, 2026]</span>
+          </div>
+          <div class="meta-item">
+            <strong>Last Updated:</strong> <span class="placeholder-pill">[Effective Date, e.g., November 21, 2026]</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Table of Contents -->
+      <nav class="toc-card" aria-label="Table of contents">
+        <div class="toc-title">
+          <span>📋</span> Table of Contents
+        </div>
+        <ul class="toc-list">
+          <li><a class="toc-link" href="#section-1">1. Introduction</a></li>
+          <li><a class="toc-link" href="#section-2">2. Information Handled by Billora</a></li>
+          <li><a class="toc-link" href="#section-3">3. Local Data Storage</a></li>
+          <li><a class="toc-link" href="#section-4">4. Customer & Invoice Info</a></li>
+          <li><a class="toc-link" href="#section-5">5. PDF Generation & Sharing</a></li>
+          <li><a class="toc-link" href="#section-6">6. Backup and Restore</a></li>
+          <li><a class="toc-link" href="#section-7">7. Third-Party Services & SDKs</a></li>
+          <li><a class="toc-link" href="#section-8">8. Data Security & Limitations</a></li>
+          <li><a class="toc-link" href="#section-9">9. Retention, Soft Deletes & Erasure</a></li>
+          <li><a class="toc-link" href="#section-10">10. Children's Privacy</a></li>
+          <li><a class="toc-link" href="#section-11">11. Policy Changes & Updates</a></li>
+          <li><a class="toc-link" href="#section-12">12. Contact Information</a></li>
+        </ul>
+      </nav>
+
+      <!-- Section 1 -->
+      <section id="section-1" class="policy-section">
+        <h2 class="section-heading">1. Introduction</h2>
+        <p>
+          Welcome to <strong>Billora — Simple Invoice Maker</strong> ("Billora", "we", "our", or "us"), developed by <strong>NH TechLabs</strong>.
+        </p>
+        <p>
+          We believe that your business and financial records belong strictly to you. Billora is designed from the ground up as an <strong>offline-first</strong> mobile invoice application. We do not operate user accounts, we do not require a sign-in, and we do not operate remote application servers to collect, store, or monetize your business records.
+        </p>
+        <p>
+          This Privacy Policy explains in plain, simple language what data is handled when you use Billora on your Android device, where that data is stored, and your rights regarding your information.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="section-2" class="policy-section">
+        <h2 class="section-heading">2. Information Handled by Billora</h2>
+        <p>
+          When you use Billora to run your daily billing operations, you enter information necessary to create and manage invoices. This includes:
+        </p>
+        <ul>
+          <li><strong>Business Profile Information:</strong> Your store or shop name, proprietor name, business phone number, business email address, shop physical address, business logo, tax identification number (optional), and custom invoice terms or footer greetings.</li>
+          <li><strong>Customer Information:</strong> Customer names and contact phone numbers entered on invoices.</li>
+          <li><strong>Transaction and Invoice Details:</strong> Sequential invoice numbers, dates, line items (item descriptions, quantities, unit prices, discounts), subtotal amounts, applicable taxes, grand totals, amounts paid, payment methods (e.g., cash, bank transfer, card), payment statuses (paid, partial, unpaid), outstanding balances, and invoice notes.</li>
+          <li><strong>Local Preferences:</strong> Currency symbol and code (e.g., Rs. / PKR), paper slip width preference (e.g., 80mm or 58mm), and UI settings.</li>
+        </ul>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="section-3" class="policy-section">
+        <h2 class="section-heading">3. Local Data Storage</h2>
+        <p>
+          All data you enter into Billora is stored <strong>locally on your device</strong> inside a private SQLite database (<code>billora.db</code>) managed by the Android operating system sandbox.
+        </p>
+        <div class="callout callout-success">
+          <strong>Key Guarantee:</strong> Billora operates completely without an internet connection. Your database is stored in the application's private internal storage area (<code>/data/user/0/com.billora.app/databases/</code>), which cannot be accessed by other standard applications on your device.
+        </div>
+        <ul>
+          <li><strong>No Cloud Database:</strong> Billora does not upload your invoices, customer details, or business information to any cloud database, remote server, or external service.</li>
+          <li><strong>Offline Operation:</strong> The application functions fully offline without needing mobile data or Wi-Fi.</li>
+          <li><strong>Device Isolation:</strong> Android's application sandbox protects your SQLite database from unauthorized access by other installed apps.</li>
+        </ul>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="section-4" class="policy-section">
+        <h2 class="section-heading">4. Customer and Invoice Information</h2>
+        <p>
+          Customer and transaction data entered into Billora is used solely to generate your invoices, calculate sales summaries, and help you track pending payments on your device.
+        </p>
+        <ul>
+          <li>We do not build marketing profiles of your customers.</li>
+          <li>We do not read your device's contacts list.</li>
+          <li>We do not sell, rent, disclose, or share customer names or phone numbers with any third parties or advertisers.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="section-5" class="policy-section">
+        <h2 class="section-heading">5. PDF Generation and Sharing</h2>
+        <p>
+          Billora allows you to generate professional PDF invoices and receipts:
+        </p>
+        <ul>
+          <li><strong>Local Document Creation:</strong> Invoices are rendered directly on your phone as standard PDF documents using your device's built-in print renderer.</li>
+          <li><strong>Temporary Storage:</strong> Generated PDF files are temporarily held in your application's secure document cache.</li>
+          <li><strong>User-Initiated Sharing:</strong> When you choose to share an invoice via WhatsApp, email, messaging, or cloud storage apps, Billora hands off the PDF file using Android's standard system share menu (<code>FileProvider</code>).</li>
+          <li><strong>User Control:</strong> Data is transmitted only to the specific application you choose at the moment of sharing. Billora has no control over or access to data once shared with your chosen external application.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="section-6" class="policy-section">
+        <h2 class="section-heading">6. Backup and Restore</h2>
+        <p>
+          To protect against device loss or damage, Billora includes a manual local backup and restore feature:
+        </p>
+        <ul>
+          <li><strong>JSON Backup Files:</strong> When you tap <strong>Export Local Backup</strong>, Billora creates an unencrypted, structured JSON file (<code>Billora-Backup-YYYY-MM-DD.json</code>) containing your business profile, invoice sequences, invoices (including soft-deleted records), and line items.</li>
+          <li><strong>Storage Location:</strong> Backups are saved directly to a folder you select via Android's Storage Access Framework (such as your Downloads folder or an SD card) or shared via the system share sheet.</li>
+          <li><strong>Restoring Data:</strong> When you select a valid backup file to restore, the data replaces your active local database inside an atomic transaction.</li>
+          <li><strong>User Responsibility:</strong> Because backup files are stored in unencrypted plain text and held on your local storage or external destination of your choice, you are responsible for keeping these backup files secure.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="section-7" class="policy-section">
+        <h2 class="section-heading">7. Third-Party Applications and Services</h2>
+        <p>
+          We maintain a clean, tracker-free environment:
+        </p>
+        <ul>
+          <li><strong>No Advertising SDKs:</strong> Billora does not contain third-party advertising SDKs or ad networks (such as Google AdMob, Unity, or AppLovin).</li>
+          <li><strong>No Analytics or Telemetry SDKs:</strong> Billora does not include behavioral tracking or analytics frameworks (such as Firebase Analytics, Google Analytics, Facebook Pixel, or Mixpanel).</li>
+          <li><strong>No Crash Reporting Trackers:</strong> Billora does not send automated background crash or performance reports to external tracking platforms.</li>
+          <li><strong>Android OS Permissions:</strong> Billora does not request sensitive permissions such as Camera, Contacts, Microphone, Precise Location, or Bluetooth hardware access. Legacy storage permissions (<code>READ/WRITE_EXTERNAL_STORAGE</code>) are explicitly blocked.</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="section-8" class="policy-section">
+        <h2 class="section-heading">8. Data Security and Limitations</h2>
+        <p>
+          We care about protecting your business data, and we are transparent about how security works in Billora:
+        </p>
+        <ul>
+          <li><strong>No Remote Application Server:</strong> No remote application server currently processes, receives, or stores your business records.</li>
+          <li><strong>No Automated Transmission:</strong> No business records or invoice details are automatically transmitted to NH TechLabs or any third party.</li>
+          <li><strong>Unencrypted Local Storage & Backups:</strong> The local SQLite database and exported JSON backup files are stored in unencrypted format.</li>
+          <li><strong>Operating System Sandboxing:</strong> Android isolates Billora's application data from other applications on your device through standard Linux user permissions and application sandboxing.</li>
+        </ul>
+        <div class="callout callout-warning">
+          <strong>User Security Responsibility:</strong> Because data is stored locally and unencrypted, users are responsible for protecting their physical devices with a secure screen lock (PIN, password, or biometric authentication) and safeguarding exported backup files and shared PDF documents.
+        </div>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="section-9" class="policy-section">
+        <h2 class="section-heading">9. Data Retention, Soft Deletion, and Permanent Removal</h2>
+        <p>
+          You retain full ownership of your records. Please understand how data retention and deletion operate within Billora:
+        </p>
+        <ul>
+          <li><strong>Soft Deletion in SQLite:</strong> When you delete an invoice within the application, it is soft-deleted by setting <code>is_deleted = 1</code>. It is immediately removed from active invoice lists, customer ledgers, and dashboard calculations. However, <strong>the underlying record remains stored in your local SQLite database</strong> to preserve sequence number continuity and transaction audit history. Deleting an invoice inside the app does not permanently erase its row from the database.</li>
+          <li><strong>Inclusion in Backup Files:</strong> When you export a local backup, all invoices — including soft-deleted invoices (<code>is_deleted = 1</code>) — are included in the exported JSON file to ensure complete database integrity upon restoration.</li>
+          <li><strong>Restoring Backups Restores Deleted Invoices:</strong> If you restore a backup file, any soft-deleted invoices contained in that backup will be restored into the local SQLite database with their deleted status preserved.</li>
+        </ul>
+        <div class="callout callout-info">
+          <strong>Permanent Deletion (Full Erasure):</strong> Billora does not feature a single-invoice hard shredding function. To permanently and irreversibly erase all business profiles, customer names, invoices, and payment records from your device:
+          <ol style="margin: 8px 0 0 20px;">
+            <li>Clear application data in Android Settings (<strong>Settings &gt; Apps &gt; Billora &gt; Storage &gt; Clear Data / Clear Storage</strong>), or</li>
+            <li>Uninstall the Billora application from your device.</li>
+          </ol>
+        </div>
+        <p>
+          <strong>Deleting Exported Backups and PDFs:</strong> Any backup JSON files or PDF copies saved to your phone's external storage (such as Documents, Downloads, or an SD card) remain on your device even after the app is uninstalled. They must be deleted manually by you using your device's file manager.
+        </p>
+      </section>
+
+      <!-- Section 10 -->
+      <section id="section-10" class="policy-section">
+        <h2 class="section-heading">10. Children's Privacy</h2>
+        <p>
+          Billora is a commercial invoicing and billing utility intended for retail store owners, shopkeepers, service providers, and business operators. The application is not directed toward children under the age of 13 (or under the applicable age of consent in your jurisdiction), and we do not knowingly solicit or collect information from children.
+        </p>
+      </section>
+
+      <!-- Section 11 -->
+      <section id="section-11" class="policy-section">
+        <h2 class="section-heading">11. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes in the application or legal requirements. When updates occur:
+        </p>
+        <ul>
+          <li>The updated policy will be included within the application and posted on our official policy website.</li>
+          <li>The "Effective Date" and "Last Updated" at the top of this document will be revised.</li>
+          <li>We encourage you to review this policy periodically. Continued use of Billora following any modifications constitutes acceptance of the updated policy.</li>
+        </ul>
+      </section>
+
+      <!-- Section 12 -->
+      <section id="section-12" class="policy-section">
+        <h2 class="section-heading">12. Contact Information</h2>
+        <p>
+          If you have questions, concerns, or feedback regarding this Privacy Policy or Billora's privacy practices, please contact us:
+        </p>
+
+        <div class="contact-card">
+          <div class="contact-grid">
+            <div class="contact-field">
+              <div class="contact-label">Developer Brand</div>
+              <div class="contact-val">NH TechLabs</div>
+            </div>
+            <div class="contact-field">
+              <div class="contact-label">Lead / Contact Person</div>
+              <div class="contact-val"><span class="placeholder-pill">[Developer/Contact Name, e.g., Naveed Ul Hassan]</span></div>
+            </div>
+            <div class="contact-field">
+              <div class="contact-label">Support Email</div>
+              <div class="contact-val"><span class="placeholder-pill">[Contact Email, e.g., support@nhtechlabs.com]</span></div>
+            </div>
+            <div class="contact-field">
+              <div class="contact-label">Official Website</div>
+              <div class="contact-val"><span class="placeholder-pill">[Official Website URL, e.g., https://nhtechlabs.com]</span></div>
+            </div>
+            <div class="contact-field" style="grid-column: 1 / -1;">
+              <div class="contact-label">Physical / Mailing Address</div>
+              <div class="contact-val"><span class="placeholder-pill">[Physical / Mailing Address, City, Country]</span></div>
+            </div>
+            <div class="contact-field" style="grid-column: 1 / -1;">
+              <div class="contact-label">Application Package</div>
+              <div class="contact-val"><code>com.billora.app</code></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">NH TechLabs • Billora — Simple Invoice Maker</div>
+      <div>Package Identifier: <code>com.billora.app</code> | Offline Invoicing Utility</div>
+      <div class="footer-links">
+        <a href="#section-1">Introduction</a>
+        <a href="#section-3">Local Storage</a>
+        <a href="#section-8">Security</a>
+        <a href="#section-9">Data Retention</a>
+        <a href="#section-12">Contact</a>
+      </div>
+      <div style="margin-top: 14px; font-size: 13px; color: #94a3b8;">
+        &copy; 2026 NH TechLabs. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
