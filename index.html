@@ -423,10 +423,10 @@
             <strong>Package Identifier:</strong> com.billora.app
           </div>
           <div class="meta-item">
-            <strong>Effective Date:</strong> November 21, 2026
+            <strong>Effective Date:</strong> November 23, 2026
           </div>
           <div class="meta-item">
-            <strong>Last Updated:</strong> November 21, 2026
+            <strong>Last Updated:</strong> November 23, 2026
           </div>
         </div>
       </header>
@@ -487,12 +487,12 @@
           All business and customer records you enter into Billora are stored <strong>locally on your device</strong> inside a private SQLite database (<code>billora.db</code>) managed by the Android operating system sandbox.
         </p>
         <div class="callout callout-success">
-          <strong>Key Guarantee:</strong> Billora operates as an offline-first mobile invoicing tool and does not operate its own remote servers, cloud databases, or backend synchronization services to collect or store your business records. Although the Android package includes the standard baseline INTERNET permission, Billora's application code performs zero network requests and does not transmit your records to NH TechLabs or any external party.
+          <strong>Key Guarantee:</strong> Billora operates as an offline-first mobile invoicing tool and does not operate its own remote servers, cloud databases, or backend synchronization services to collect or store your business records. Although the Android package includes the standard baseline INTERNET permission, Billora's application code performs zero network requests and does not transmit your records to NH TechLabs or any external party, subject to current dependency verification.
         </div>
         <ul>
           <li><strong>No Proprietary Cloud Database:</strong> Billora does not operate remote database servers to store or process your customer records, transaction details, or store settings.</li>
           <li><strong>Offline Functionality:</strong> The application functions completely without requiring mobile data or Wi-Fi.</li>
-          <li><strong>Operating System Sandbox:</strong> Android's application sandbox isolates your SQLite database (<code>/data/user/0/com.billora.app/databases/</code>) from access by other standard applications on your device.</li>
+          <li><strong>Operating System Sandbox:</strong> Android's application sandbox isolates your SQLite database (<code>/data/user/0/com.billora.app/databases/</code>) from access by other standard applications on your device using Linux user-level permissions. Billora relies on these standard Android OS boundaries, which may operate differently if a device has been modified, rooted, or uses non-standard manufacturer firmware.</li>
           <li><strong>Automatic Operating System Backup Disabled:</strong> To ensure maximum privacy and guarantee that your business data never leaves your device without your explicit action, Billora explicitly disables automatic Android cloud backup (<code>android:allowBackup="false"</code>). The operating system will not automatically copy your SQLite database to Google Drive in the background. Backups are created only when you manually initiate them.</li>
         </ul>
       </section>
@@ -528,26 +528,26 @@
       <section id="section-6" class="policy-section">
         <h2 class="section-heading">6. Backup and Restore</h2>
         <p>
-          To safeguard against device damage or hardware upgrades, Billora provides a local-first backup system with optional user-initiated cloud backup:
+          To safeguard against device loss, damage, or hardware upgrades, Billora provides a local-first backup system with distinct local creation and optional user-initiated external export workflows:
         </p>
-        <h3 style="font-size: 1.05rem; color: var(--primary-navy); margin: 18px 0 8px 0; font-weight: 700;">A. Local Backup (Default)</h3>
+        <h3 style="font-size: 1.05rem; color: var(--primary-navy); margin: 18px 0 8px 0; font-weight: 700;">A. Create Local Backup (Default)</h3>
         <ul>
-          <li><strong>Local-First Creation:</strong> When you tap <strong>Create Local Backup</strong> in Settings, Billora generates an unencrypted, structured JSON file (<code>Billora-Backup-YYYY-MM-DD.json</code>) containing your store profile, invoice sequences, invoices (including soft-deleted records), and line items.</li>
-          <li><strong>On-Device Storage Destination:</strong> The file is saved directly into a local device folder you choose via Android's Storage Access Framework (SAF) (such as your Downloads folder or an SD card).</li>
-          <li><strong>Guaranteed Confinement:</strong> Local backups are stored strictly on your device. Billora will never automatically upload them to the cloud.</li>
+          <li><strong>Internal Sandbox Copy:</strong> When you tap <strong>Create Local Backup</strong> in Settings, Billora generates a structured JSON file (<code>Billora-Backup-YYYY-MM-DD.json</code>) containing your store profile, invoice sequences, invoices (including soft-deleted records), and line items. This file is written directly into the application's private, sandboxed internal storage (<code>/data/user/0/com.billora.app/files/</code>). Internal application files are removed if application storage is cleared or if the app is uninstalled.</li>
+          <li><strong>User-Controlled Accessible Storage Copy:</strong> In addition to internal storage, Billora prompts you to save an accessible local copy via Android's Storage Access Framework (SAF) into a user-controlled local folder (such as your Downloads folder or an external SD card). This external local copy remains available to you on your device storage even after Billora is uninstalled.</li>
+          <li><strong>Guaranteed Confinement:</strong> Local backups are saved strictly on your device. Billora will never automatically upload them to the cloud.</li>
         </ul>
-        <h3 style="font-size: 1.05rem; color: var(--primary-navy); margin: 18px 0 8px 0; font-weight: 700;">B. Optional User-Initiated Cloud Backup (Google Drive / External Location)</h3>
+        <h3 style="font-size: 1.05rem; color: var(--primary-navy); margin: 18px 0 8px 0; font-weight: 700;">B. Share / Export Backup Copy (Optional External Export)</h3>
         <ul>
           <li><strong>User-Initiated Action Only:</strong> If you wish to export a backup copy to Google Drive or another external location, you can explicitly tap <strong>Share / Export Backup Copy</strong> in Settings.</li>
-          <li><strong>System Document Provider Delegation:</strong> Billora prepares the backup file and hands it off to Android's system document provider / sharing menu (<code>ACTION_SEND</code>). You can then select <strong>Google Drive</strong> ("Save to Drive") or another available document provider (such as OneDrive or Dropbox) as the destination.</li>
-          <li><strong>Zero Third-Party APIs or Credentials:</strong> Billora does not connect to the Google Drive REST API, does not use Google OAuth, and does not collect or store your Google account credentials or tokens. The transfer is handled directly by Android and the destination app you choose.</li>
-          <li><strong>No Background Sync:</strong> No backup is ever created, uploaded, or synchronized automatically in the background.</li>
+          <li><strong>System Document Provider Delegation:</strong> Billora prepares the backup file in its cache and hands it off to Android's native system share menu (<code>ACTION_SEND</code>). You can then select <strong>Google Drive</strong> ("Save to Drive") or another available document provider (such as OneDrive or Dropbox) as the destination.</li>
+          <li><strong>Zero Third-Party APIs or Credentials:</strong> Billora does not connect to the Google Drive REST API, does not use Google OAuth, and does not collect or store your Google account credentials or tokens. The transfer is handled directly by the Android operating system and the destination application you choose.</li>
+          <li><strong>No Background Sync &amp; No Developer Receipt:</strong> No backup is ever created, uploaded, or synchronized automatically in the background. NH TechLabs does not receive, host, or view your exported backup files.</li>
         </ul>
         <h3 style="font-size: 1.05rem; color: var(--primary-navy); margin: 18px 0 8px 0; font-weight: 700;">C. Backup Restoration</h3>
         <ul>
-          <li><strong>User-Directed File Selection:</strong> When you tap <strong>Restore from Backup</strong>, Android's system file picker opens, allowing you to select a backup file stored locally on your device or in your Google Drive account.</li>
+          <li><strong>User-Directed File Selection:</strong> When you tap <strong>Restore from Backup</strong>, Android's system document picker opens, allowing you to select a backup file stored locally on your device or in your personal Google Drive account.</li>
           <li><strong>Scoped Access:</strong> Billora accesses only the specific backup file you select.</li>
-          <li><strong>Validation &amp; Atomic Transaction:</strong> The file is fully validated for structural integrity, version compatibility, and data safety before being imported. If valid, the database is restored inside an atomic SQLite transaction. If validation fails or you cancel, your current local database remains 100% untouched.</li>
+          <li><strong>Validation &amp; Overwrite Warning:</strong> The file is fully validated for structural integrity, version compatibility, and data safety before being imported. <strong>Warning:</strong> Restoring from a backup replaces the active local database records in SQLite after your explicit confirmation. If validation fails or you cancel, your current local database remains 100% untouched.</li>
           <li><strong>User Security Responsibility:</strong> Because backup files contain unencrypted business records, you are solely responsible for safeguarding backup files stored on your device or in your cloud storage accounts.</li>
         </ul>
       </section>
@@ -576,11 +576,11 @@
           <li><strong>No Remote Application Server:</strong> NH TechLabs operates no remote servers, web APIs, or cloud infrastructure to receive, process, or store your business records.</li>
           <li><strong>No Application-Level Automated Transmission:</strong> Billora's application code performs zero background telemetry and makes zero outbound network calls.</li>
           <li><strong>Automatic OS Backup Disabled:</strong> Android's automated operating-system backup is disabled (<code>android:allowBackup="false"</code>). No background backup transfers occur. Backups saved to Google Drive or external locations are initiated solely and explicitly by you via the Android document chooser. NH TechLabs has no access to, visibility into, or control over files stored in your personal Google Account.</li>
-          <li><strong>Unencrypted Local Files:</strong> The on-device SQLite database (<code>billora.db</code>) and exported manual JSON backups (<code>Billora-Backup-YYYY-MM-DD.json</code>) are stored in unencrypted format.</li>
-          <li><strong>Operating System Sandboxing:</strong> Android isolates Billora's application directory from other installed applications through standard Linux user permissions.</li>
+          <li><strong>Unencrypted Local Files:</strong> The on-device SQLite database (<code>billora.db</code>) is not application-level encrypted. Exported manual JSON backups (<code>Billora-Backup-YYYY-MM-DD.json</code>) are stored in unencrypted plaintext format. Billora does not currently provide password-protected backup files.</li>
+          <li><strong>Operating System Sandboxing vs. Encryption:</strong> Android isolates Billora's application directory from other installed applications through standard Linux user permissions. While operating system sandboxing provides application isolation, it is not the same as database encryption.</li>
         </ul>
         <div class="callout callout-warning">
-          <strong>User Security Responsibility:</strong> Because local files are unencrypted, the application does not make absolute or infallible security guarantees. Users are responsible for protecting their physical devices with a secure screen lock (PIN, password, or biometric authentication), safeguarding exported backup files, and configuring device backup settings according to their own business security standards.
+          <strong>User Security Responsibility:</strong> Because local files and exported backups are unencrypted plaintext, the application does not make absolute or infallible security guarantees. Users are responsible for protecting their physical devices with a secure screen lock (PIN, password, or biometric authentication), safeguarding exported backup files, and configuring device backup settings according to their own business security standards.
         </div>
       </section>
 
@@ -592,8 +592,8 @@
         </p>
         <ul>
           <li><strong>Soft Deletion in SQLite:</strong> When you delete an invoice within the application, it is soft-deleted by setting <code>is_deleted = 1</code>. It is immediately removed from active invoice lists, customer ledgers, and dashboard calculations. However, <strong>the underlying record remains stored in your local SQLite database</strong> to preserve sequence number continuity and transaction audit history. Deleting an invoice inside the app does not permanently erase its row from the database. Soft-deleted records are included in backup exports.</li>
-          <li><strong>Permanent Local Erasure:</strong> You can permanently destroy your active local SQLite database, settings, and cached documents on your phone at any time by clearing application data in Android Settings (<strong>Settings &gt; Apps &gt; Billora &gt; Storage &gt; Clear Data / Clear Storage</strong>) or by uninstalling the application. Because automatic OS cloud backup is disabled (<code>android:allowBackup="false"</code>), clearing local storage or uninstalling the app permanently purges all active business data from your device.</li>
-          <li><strong>Managing and Deleting Exported Backups:</strong> Any backup files (<code>Billora-Backup-YYYY-MM-DD.json</code>) or PDF invoices you manually saved to your device storage (such as Downloads or Documents) or copied to Google Drive remain under your direct control in those locations even after Billora is uninstalled. You can delete these files at any time directly through your phone's file manager or the Google Drive application. NH TechLabs operates no servers and has no ability to access or delete files stored in your local storage or personal Google Drive account.</li>
+          <li><strong>Internal Backup Retention &amp; Permanent Erasure:</strong> Internal application files in <code>/data/user/0/com.billora.app/</code> are permanently destroyed when application storage is cleared in Android Settings (<strong>Settings &gt; Apps &gt; Billora &gt; Storage &gt; Clear Data / Clear Storage</strong>) or when the application is uninstalled. Because automatic OS cloud backup is disabled (<code>android:allowBackup="false"</code>), clearing local storage or uninstalling the app permanently purges all active business data and internal backups from your device.</li>
+          <li><strong>Shared Local &amp; External Backup Retention:</strong> Any backup files (<code>Billora-Backup-YYYY-MM-DD.json</code>) or PDF invoices you manually saved to your device's shared storage (such as Downloads or Documents) or exported to Google Drive remain under your direct control in those locations even after Billora is uninstalled. You can delete these files at any time directly through your phone's file manager or the Google Drive application. NH TechLabs operates no servers and has no ability or promise to remotely delete files stored in your local storage or personal Google Drive account.</li>
         </ul>
       </section>
 
